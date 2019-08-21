@@ -13,3 +13,13 @@
   color: white;
   margin: 0;
 }
+
+.cont {
+  display: flex;
+  flex-flow: row;
+}
+
+.context {
+  text-align: center;
+  width: 100%;
+}

@@ -1,0 +1,23 @@
+
+.normal {
+  font-family: Georgia, sans-serif;
+  margin-top: 4em;
+  text-align: center;
+}
+.login_form {
+  max-width: 360px;
+  position: absolute;
+    top: 45%;
+    left: 50%;
+    margin: -160px 0 0 -160px;
+    width: 360px;
+    height: 340px;
+    padding: 40px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.08);
+}
+.login_form_login {
+  float: right;
+}
+.login_form_button {
+  width: 100%;
+}
