@@ -3,8 +3,19 @@ import React from 'react';
 
 class Bill extends React.Component {
 
-  onChange = (checked) => {
-    console.log(`switch to ${checked}`);
+  state = {
+    flag: true
+  }
+
+  onChange = () => {
+    this.state.flag === true ?
+      this.setState({
+        flag: false
+      })
+      :
+      this.setState({
+        flag: true
+      })
   }
 
   handleSubmit = e => {
@@ -24,22 +35,26 @@ class Bill extends React.Component {
     }
     return (
       <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-        <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked onChange={this.onChange()} />
-        <Form.Item label="发票抬头">
-          {getFieldDecorator('radio-group', { rules: [{ required: true }] })(<Input placeholder="请输入" />)}
-        </Form.Item>
-        <Form.Item label="纳税人识别号">
-          {getFieldDecorator('radio-group', { rules: [{ required: true }] })(<Input placeholder="请输入" />)}
-        </Form.Item>
-        <Form.Item label="电话号码">
-          {getFieldDecorator('radio-group', { rules: [{ required: true }] })(
-            <div style={{ display: 'inline' }}>
-              <Input style={{ width: '15%', marginRight: 4 }} />
-              <span>-</span>
-              <Input style={{ width: '45%', marginRight: 4, marginLeft: 4 }} />
-            </div>
-          )}
-        </Form.Item>
+        <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked onChange={this.onChange} />
+        {this.state.flag === true ?
+          <div>
+            <Form.Item label="发票抬头">
+              {getFieldDecorator('radio-group', { rules: [{ required: true }] })(<Input placeholder="请输入" />)}
+            </Form.Item>
+            <Form.Item label="纳税人识别号">
+              {getFieldDecorator('radio-group', { rules: [{ required: true }] })(<Input placeholder="请输入" />)}
+            </Form.Item>
+            <Form.Item label="电话号码">
+              {getFieldDecorator('radio-group', { rules: [{ required: true }] })(
+                <div style={{ display: 'inline' }}>
+                  <Input style={{ width: '15%', marginRight: 4 }} />
+                  <span>-</span>
+                  <Input style={{ width: '45%', marginRight: 4, marginLeft: 4 }} />
+                </div>
+              )}
+            </Form.Item>
+          </div>
+          : null}
       </Form>
     )
   }
