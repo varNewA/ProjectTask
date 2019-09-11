@@ -62,6 +62,7 @@ function BasicLayout(props) {
               <Menu.Item key="2" ><Link to={'./showform'}>ShowForm</Link></Menu.Item>
               <Menu.Item key="3"><Link to={'./dateform'}>DateForm</Link></Menu.Item>
               <Menu.Item key="4"><Link to={'./packageform'}>PackageForm</Link></Menu.Item>
+              <Menu.Item key="5"><Link to={'./billform'}>BillForm</Link></Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub2"
@@ -72,7 +73,6 @@ function BasicLayout(props) {
           </span>
               }
             >
-              <Menu.Item key="5"><Link to={'./billform'}>BillForm</Link></Menu.Item>
               <Menu.Item key="6">option6</Menu.Item>
               <Menu.Item key="7">option7</Menu.Item>
               <Menu.Item key="8">option8</Menu.Item>
